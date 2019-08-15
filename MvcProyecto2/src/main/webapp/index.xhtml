@@ -4,34 +4,44 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+         <!-- nombre de la pagina  -->
+        <title>Formulario Principal</title>
     </h:head>
     <h:body>
         <h:form>
-            
+                <!-- Etiqueta que muestra el nombre de la casilla  -->
                 <h:outputLabel value= "Nombre:"  ></h:outputLabel>
+                <!-- donde se guarda el campo ingresado -->
                 <h:inputText value="#{datos.nombre}"></h:inputText>
                 <br></br>
                 <br></br>
+                <!-- Etiqueta que muestra el nombre de la casilla  -->
                 <h:outputLabel value= "Valor por dia :"  ></h:outputLabel>
+                <!-- donde se guarda el campo ingresado -->
                 <h:inputText value="#{datos.salario}"></h:inputText>
                 <br></br>
                 <br></br>
+                <!-- Etiqueta que muestra el nombre de la casilla  -->
                 <h:outputLabel value= "Dias trabajados:"  ></h:outputLabel>
+                <!-- donde se guarda el campo ingresado -->
                 <h:inputText value="#{datos.dias}"></h:inputText>
                 <br></br>
               
                 
                 <h:selectManyCheckbox value="#{datos.idioma}">
+                    <!-- Etiqueta que muestra el nombre del campo -->
+                     <f:selectItem  itemValue="ingles" itemLabel="Ingles" />
+                    <!-- Etiqueta que muestra el nombre de la casilla  -->
                     <f:selectItem  itemValue="español" itemLabel="Español" />
                     
-                    <f:selectItem  itemValue="ingles" itemLabel="Ingles" />
-                    
+                   
+                    <!-- Etiqueta que muestra el nombre de la casilla  -->
                     <f:selectItem  itemValue="frances" itemLabel="Frances" />
-                    
+                    <!-- Etiqueta que muestra el nombre de la casilla  -->
                     <f:selectItem  itemValue="aleman" itemLabel="Aleman" />
                 </h:selectManyCheckbox>
                 <br></br>
+                <!-- boton que redirige a la siguiente pagina -->
                 <h:commandButton value="Mostrar Sueldo" action="datosFinal"></h:commandButton> 
             
         </h:form>

@@ -11,21 +11,30 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 
 /**
- *
- * @author Hernan
+ *@author Camilo Alvarez
+ * @author Hernan Hernandez
+ * @version 1.0
+ * conrolador que trae  datos de otro controler y los muestra en la vista final 
  */
 
 @ManagedBean
 @RequestScoped
 public class Producto {
+    //trae los datos del modelo
     private Sueldo sueldo;
-    
+    //anotacion que sirve para traer datos de otro controlador 
     @ManagedProperty("#{datos}")
     private Datos datos;
     
+    /**
+     * constrcutor vacio
+     */
     public Producto() {
     }
-
+    /**
+     * Metodo que retorna a la vista final en un string la respuesta 
+     * @return 
+     */
     public String respuesta(){
     sueldo=new Sueldo();
     long total = sueldo.calcular(datos.getIdioma(), datos.getDias(),datos.getSalario(),datos.getNombre());
@@ -37,11 +46,15 @@ public class Producto {
     return mostrar;
     }
     
-    
+    /**
+     * metodos para hacer publica las variables 
+      */
     public Datos getDatos() {
         return datos;
     }
-
+    /**
+     * metodos para hacer publica las variables 
+     */
     public void setDatos(Datos datos) {
         this.datos = datos;
     }
